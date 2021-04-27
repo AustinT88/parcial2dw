@@ -11,15 +11,15 @@
 <div class="card">
         <div class="card-body">
     <h1>Iniciar Sesión</h1>
-    <form action="<?=base_url('/guardarVehiculos')?>" method="post" enctype="multipart/form-data">
+    <form action="<?=base_url('/iniciarSecion')?>" method="post" enctype="multipart/form-data">
     <div class="form-group">
-    <label for="txtplaca">Placa:</label>
-    <input type="text" name="txtplaca" class="form-control">
+    <label for="txtusuario">USUARIO:</label>
+    <input type="text" name="txtusuario" class="form-control">
     <br>
-    <label for="txtprecio">Precio:</label>
-    <input type="text" name="txtprecio" class="form-control">
+    <label for="txtcontra">Contraseña:</label>
+    <input type="password" name="txtcontra" class="form-control">
     <br>
-     <input type="submit" value="Guardar Vehiculo" name="btnenviar" class="btn btn-success">
+     <input type="submit" value="Iniciar Sesión" name="btnenviar" class="btn btn-success">
     </div>
     </form>
     </div>

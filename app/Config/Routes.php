@@ -57,4 +57,5 @@ $routes->post('guardarVehiculos', 'Vehiculos::guardarVehiculos1');
 $routes->get('borrar/(:num)', 'Vehiculos::borrarVehiculo/$1');
 $routes->get('editarVehiculo/(:num)', 'Vehiculos::editarVehiculo/$1');
 $routes->post('actualizarVehiculos', 'Vehiculos::actualizarVehiculo');
-$routes->post('InicioSesion', 'Vehiculos::inicioSecion');
+$routes->get('inicio', 'Vehiculos::inicioSecion');
+$routes->post('iniciarSecion', 'Vehiculos::IniciarSesion');

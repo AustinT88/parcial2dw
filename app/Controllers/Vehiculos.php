@@ -4,7 +4,31 @@ namespace App\Controllers;
 use CodeIgniter\Controller;
 use App\Models\Vehiculo;
 class Vehiculos extends Controller{
+  
+  
+    public function inicioSecion(){
+        return view('inicioSesion');
+   }
+
+   public function iniciarSesion(){
+       $usuario = $this->request->getVar('txtusuario');
+       $contra = $this->request->getVar('txtcontra');
+
+      if ($contra = '1234' and $usuario='Parcial') {
+          return view('listar');
+      } else {
+        return view('inicio');
+      }
+      
+
+   }
+   
+   
+   
+   
     //muestra con un array todos los elementos de la tabla 
+   
+   
     public function index(){
        
         $vehiculo = new Vehiculo();
@@ -83,5 +107,6 @@ class Vehiculos extends Controller{
 
         
     }
+
 
 }

@@ -35,7 +35,7 @@ class Vehiculos extends Controller{
        $vehiculo->insert($datos);
        
 
-       echo "datos almacenados con exito";
+       return $this->response->redirect(site_url('listar'));
 
     }
 
@@ -48,16 +48,40 @@ class Vehiculos extends Controller{
         return view('borrarVehiculo' , $datos);
     }
 
-    public function vehiculosBorrados(){
-       // $id = $this->request->getVar('txtid');
-        // echo  "el dato es " . $id;
-        
+    public function borrarVehiculo($id=null){
+      
         $vehiculo = new Vehiculo();
-        $datos=$vehiculo->where('id', $txtid)->first();
-        $datos->where('id', $txtid)->delete($id);
+        $datos=$vehiculo->where('id',$id)->first();
+        $vehiculo->where('id', $id)->delete($id);
 
-        echo "ID Eliminado ";
+        return $this->response->redirect(site_url('listar'));
+        
+    }
 
+    public function editarVehiculo($id=null){
+        echo $id;
+      
+        $vehiculo = new Vehiculo();
+      
+        $datose['vehiculo']=$vehiculo->where('id',$id)->first();
+      
+        return view('editarVehiculo', $datose);
+    }
+
+    public function actualizarVehiculo(){
+        $vehiculo = new Vehiculo();
+        $datos=[
+            'placa'=> $this->request->getVar('txtplaca'),
+            'precio'=>$this->request->getVar('txtprecio'),
+            'marca'=>$this->request->getVar('txtmarca'),
+            'fechacompra'=>$this->request->getVar('txtfechacompra')
+         ];
+         $id= $this->request->getVar('id');
+         $vehiculo->update($id,$datos);
+
+         return $this->response->redirect(site_url('listar'));
+
+        
     }
 
 }

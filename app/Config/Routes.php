@@ -54,5 +54,7 @@ if (file_exists(APPPATH . 'Config/' . ENVIRONMENT . '/Routes.php'))
 $routes->get('listar', 'Vehiculos::index');
 $routes->get('agregarVehiculos', 'Vehiculos::agregarvehiculos');
 $routes->post('guardarVehiculos', 'Vehiculos::guardarVehiculos1');
-$routes->get('borrarVehiculo', 'Vehiculos::borrarVehiculos');
-$routes->post('vehiculoBorrado/(:num)', 'Vehiculos::vehiculosBorrados/$1');
+$routes->get('borrar/(:num)', 'Vehiculos::borrarVehiculo/$1');
+$routes->get('editarVehiculo/(:num)', 'Vehiculos::editarVehiculo/$1');
+$routes->post('actualizarVehiculos', 'Vehiculos::actualizarVehiculo');
+$routes->post('InicioSesion', 'Vehiculos::inicioSecion');

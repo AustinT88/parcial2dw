@@ -7,27 +7,38 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
 </head>
 <body>
+    <?php
+    print_r ($vehiculo)
+    ?>
+
+    <h1>EDITAR VEHICULOS</h1>
+    
     <div class="card">
         <div class="card-body">
-    <h1>Agregar Vehiculo</h1>
-    <form action="<?=base_url('/guardarVehiculos')?>" method="post" enctype="multipart/form-data">
+
+    <form action="<?=base_url('/actualizarVehiculos')?>" method="post" enctype="multipart/form-data">
+    
+    <input type="hidden" name="id" value="<?=$vehiculo['id']?>">
+
     <div class="form-group">
     <label for="txtplaca">Placa:</label>
-    <input type="text" name="txtplaca" class="form-control">
+    <input type="text" value="<?=$vehiculo['placa']?>" name="txtplaca" class="form-control">
     <br>
     <label for="txtprecio">Precio:</label>
-    <input type="text" name="txtprecio" class="form-control">
+    <input type="text" value="<?=$vehiculo['precio']?>" name="txtprecio" class="form-control">
     <br>
     <label for="txtmarca">Marca:</label>
-    <input type="text" name="txtmarca" class="form-control">
+    <input type="text" value="<?=$vehiculo['marca']?>" name="txtmarca" class="form-control">
     <br>
     <label for="txtfechacompra">fecha de compra:</label>
-    <input type="date" name="txtfechacompra" class="form-control">
+    <input type="date" value="<?=$vehiculo['fechacompra']?>" name="txtfechacompra" class="form-control">
     <br>
-    <input type="submit" value="Guardar Vehiculo" name="btnenviar" class="btn btn-success">
+    <input type="submit" value="Actualizar" name="btnenviar" class="btn btn-success">
     </div>
     </form>
     </div>
     </div>
+    
+
 </body>
 </html>
